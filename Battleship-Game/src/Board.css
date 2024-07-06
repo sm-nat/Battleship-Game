@@ -4,19 +4,44 @@
     margin: 20px;
 }
 .board {
-    margin: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
 }
 .grid {
     display: grid;
-    grid-template-columns: repeat(10, 30px);
-    grid-gap:2px;
-}
-.row {
-    display: contents;
+    grid-template-columns: repeat(10, 40px);
+    grid-template-rows: repeat(10, 40px);
+    gap:2px;
+    border: 1px solid #999;
 }
 .cell {
-    width: 30px;
-    height: 30px;
-    background-color: lightblue;
-    border: 1px solid navy;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #999;
+    background-color: #fff;
+}
+
+.ship {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: navy;
+    border: 1px solid #333;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #333;
+    cursor: pointer;
+}
+.ship.dragging {
+    opacity: 0.5;
+}
+.ship__part {
+    width: 100%;
+    height: 100%;
+    background-color: #ccc;
+    border: 1px solid #999;
 }

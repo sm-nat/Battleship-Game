@@ -24,8 +24,8 @@ function App() {
         <Route path="/" element={<Play startPlay={startPlay} />} />
         <Route path="/board" element={
           <div className='boards-container'>
-          <Board title=<h5>⚓️ Tu tablero de batalla ⚓️</h5>/>
-          <Board title=<h5>🦾 Computador </h5> />
+          <Board title="⚓️ Tu tablero de batalla ⚓️"/>
+          <Board title="🦾 Computador" />
           </div>
         } /> 
       </Routes>
