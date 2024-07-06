@@ -1,6 +1,7 @@
-.boards-container {
+.board-container {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+   align-items: center;
     margin: 20px;
 }
 .board {
@@ -17,13 +18,13 @@
     grid-template-rows: repeat(10, 40px);
     gap:2px;
     border: 1px solid #999;
+   
 }
 .cell {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 40px;
+    height: 40px;
     border: 1px solid #999;
-    background-color: #fff;
+    background-color: navy
 }
 
 .ship {
@@ -45,3 +46,5 @@
     background-color: #ccc;
     border: 1px solid #999;
 }
+
+  
