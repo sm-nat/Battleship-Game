@@ -1,0 +1,22 @@
+.boards-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+.board {
+    margin: 20px;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(10, 30px);
+    grid-gap:2px;
+}
+.row {
+    display: contents;
+}
+.cell {
+    width: 30px;
+    height: 30px;
+    background-color: lightblue;
+    border: 1px solid navy;
+}
