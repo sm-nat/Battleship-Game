@@ -1,12 +1,12 @@
 .ship {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #333;
-    border: 1px solid #222;
-    border-radius: 4px;
-    margin: 2px;
+    background-color: #575454;
+    cursor: pointer;
 }
+.ship.dragging {
+    opacity: 0.5;
+}
+
 
 .ship-part {
     width: 20px;
@@ -15,3 +15,10 @@
     border: 1px solid #999;
     margin: 1px;
 }
+.ship__part {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(137, 137, 149);
+    border: 1px solid #333;
+  }
+  

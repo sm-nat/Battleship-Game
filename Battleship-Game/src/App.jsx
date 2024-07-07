@@ -1,5 +1,4 @@
 import React from 'react'
-//import { useState } from 'react'
 import { useNavigate, Route, Routes } from 'react-router-dom'
 
 import { Header } from './Header.jsx'
@@ -22,12 +21,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Play startPlay={startPlay} />} />
-        <Route path="/board" element={
-          <div className='boards-container'>
-          <Board title="⚓️ Tu tablero de batalla ⚓️"/>
-          <Board title="🦾 Computador" />
-          </div>
-        } /> 
+        <Route path="/board" element={<Board />} />
       </Routes>
       <Footer />
     </div>
