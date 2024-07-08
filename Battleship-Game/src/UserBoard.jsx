@@ -2,14 +2,18 @@ import React, { useState } from "react";
 import "./Board.css";
 import Ship from "./Ship";
 
-const UserBoard = () => {
-    const [userShips, setUserShips] = useState([
-        { id: 1, size: 5, isPlaced: false, position: null, orientation: "horizontal" },
-        { id: 2, size: 4, isPlaced: false, position: null, orientation: "horizontal" },
-        { id: 3, size: 3, isPlaced: false, position: null, orientation: "horizontal" },
-        { id: 4, size: 3, isPlaced: false, position: null, orientation: "horizontal" },
-        { id: 5, size: 2, isPlaced: false, position: null, orientation: "horizontal" },
-      ]);
+const UserBoard = ({ handleCellClick, isUserBoard }) => {
+  const [userShips, setUserShips] = useState([
+    { id: 1, size: 5, isPlaced: false, position: null, orientation: "horizontal" },
+    { id: 2, size: 4, isPlaced: false, position: null, orientation: "horizontal" },
+    { id: 3, size: 3, isPlaced: false, position: null, orientation: "horizontal" },
+    { id: 4, size: 3, isPlaced: false, position: null, orientation: "horizontal" },
+    { id: 5, size: 2, isPlaced: false, position: null, orientation: "horizontal" },
+  ]);
+
+  const handleCellClickInternal = (row, col) => {
+    handleCellClick(row, col);
+  };
 
   const handleDragStart = (e, shipId) => {
     e.dataTransfer.setData("shipId", shipId.toString());
@@ -59,7 +63,8 @@ const UserBoard = () => {
               <div
                 key={`cell-${row}-${col}`}
                 className="cell"
-                onDrop={(e) => handleDrop(e, row, col)}
+                onClick={() => handleCellClickInternal(row, col)}
+                onDrop={isUserBoard ? ((e) => handleDrop(e, row, col)) : null}
               >
                 {userShips
                   .filter((ship) => ship.isPlaced)
